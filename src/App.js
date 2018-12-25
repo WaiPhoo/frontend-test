@@ -1,62 +1,58 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./FontStyle.css";
+import { FaSistrix } from "react-icons/fa";
+
 import MovieBox from "./components/MovieBox.js";
+
 import $ from "jquery";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    //console.log("inisitial");
-    // const movies = [
-    //   {
-    //     id: 0,
-    //     poster:
-    //       "https://image.tmdb.org/t/p/w185_and_h278_bestv2/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg",
-    //     title: "the avenger ingitai",
-    //     overview: "hfoieijqefejfe"
-    //   },
-    //   {
-    //     id: 1,
-    //     poster:
-    //       "https://image.tmdb.org/t/p/w185_and_h278_bestv2/ydUpl3QkVUCHCq1VWvo2rW4Sf7y.jpg",
-    //     title: "the avenger",
-    //     overview: "hfoieijqefejfe"
-    //   }
-    // ];
-    // var movieBoxes = [];
-    // movies.forEach(movie => {
-    //   console.log(movie.id);
-    //   const movieBox = <MovieBox movie={movie} />;
-    //   movieBoxes.push(movieBox);
-    //   this.state = { rows: movieBoxes };
-    // });
-
-    this.displayAll();
+    this.state = { rows: [], watchList: [] };
+    this.pageCnt = 1;
   }
-  displayAll() {
-    const urlString =
-      "https://api.themoviedb.org/3/discover/movie?api_key=4ccda7a34189fcea2fc752a6ee339500";
 
-    $.ajax({
-      url: urlString,
-      success: searchResults => {
-        console.log("fetch data success");
-        const results = searchResults.results;
-        var movieBoxes = [];
-        results.forEach(movie => {
-          movie.poster = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
-          // console.log(movie.poster_path);
-          const movieBox = <MovieBox key={movie.id} movie={movie} />;
-          movieBoxes.push(movieBox);
-        });
-        this.setState({ rows: movieBoxes });
-      },
-      error: (xhr, status, err) => {
-        console.error("Failed to fetch data");
-      }
-    });
+  componentDidMount() {
+    this.filterMovie("popular");
   }
+  // filter movies by popular, upcoming, now playing, top rated
+  filterMovie(searchTerm) {
+    var movieBoxes = [];
+    this.setState({ rows: [] });
+    for (let i = 1; i <= this.pageCnt; i++) {
+      movieBoxes = [];
+      const urlString =
+        "https://api.themoviedb.org/3/movie/" +
+        searchTerm +
+        "?api_key=4ccda7a34189fcea2fc752a6ee339500&language=en-US&page=" +
+        i;
+
+      $.ajax({
+        url: urlString,
+        //eslint-disable-next-line
+        success: searchResults => {
+          const results = searchResults.results;
+          results.forEach(movie => {
+            movie.poster =
+              "https://image.tmdb.org/t/p/w185" + movie.poster_path;
+            var date = movie.release_date.split("-");
+            movie.release_date = date[0];
+            const movieBox = <MovieBox key={movie.id} movie={movie} />;
+            movieBoxes.push(movieBox);
+          });
+          if (i === this.pageCnt) {
+            this.setState({ rows: movieBoxes });
+          }
+        },
+        error: (xhr, status, err) => {
+          console.error("Failed to fetch data");
+        }
+      });
+    }
+  }
+  // search movies by input keyword
   performSearch(searchTerm) {
     const urlString =
       "https://api.themoviedb.org/3/search/movie?api_key=4ccda7a34189fcea2fc752a6ee339500&query=" +
@@ -65,12 +61,12 @@ class App extends Component {
     $.ajax({
       url: urlString,
       success: searchResults => {
-        console.log("fetch data success");
         const results = searchResults.results;
         var movieBoxes = [];
         results.forEach(movie => {
           movie.poster = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
-          //console.log(movie.poster_path);
+          var date = movie.release_date.split("-");
+          movie.release_date = date[0];
           const movieBox = <MovieBox key={movie.id} movie={movie} />;
           movieBoxes.push(movieBox);
         });
@@ -82,46 +78,83 @@ class App extends Component {
     });
   }
   searchChangeHandler(event) {
-    //console.log(event.target.value);
     const searchTerm = event.target.value;
     if (searchTerm.trim() === "") {
-      //console.log("empty here");
-      this.displayAll();
+      this.filterMovie("popular");
     } else {
       this.performSearch(searchTerm);
     }
   }
+  buttonHandler(event) {
+    const searchTerm = event.target.id;
+    this.filterMovie(searchTerm);
+  }
   render() {
     return (
       <div className="App">
-        <table className="titleBar">
-          <tbody>
-            <tr>
-              <td>Movie Search</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="title-box">
+          All Movies
+          <hr />
+        </div>
+
+        <br />
         <input
+          className="search-box"
           style={{
-            fontSize: 24,
+            fontSize: 20,
             display: "block",
-            width: "100%",
-            paddingTop: 8,
-            paddingBottom: 8
+            width: "95%",
+            marginTop: 0,
+            borderTop: 0,
+            borderLeft: 0,
+            borderRight: 0,
+            borderBottom: "0.3px solid #8091A5",
+            marginLeft: "30px",
+            backgroundColor: "#262d40",
+            color: "white"
           }}
           onChange={this.searchChangeHandler.bind(this)}
-          placeholder="Enter search term"
+          placeholder={<FaSistrix />}
+          placeholder="Search..."
         />
         <div className="button-div">
-          <button>Popular</button>
-          <button>Toprated</button>
-          <button>Upcoming</button>
-          <button>Playing</button>
+          <button
+            type="button"
+            className="btn btn-outline-primary"
+            id="popular"
+            onClick={this.buttonHandler.bind(this)}
+          >
+            Popular
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-primary"
+            id="top_rated"
+            onClick={this.buttonHandler.bind(this)}
+          >
+            Toprated
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-primary"
+            id="upcoming"
+            onClick={this.buttonHandler.bind(this)}
+          >
+            Upcoming
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-primary"
+            id="now_playing"
+            onClick={this.buttonHandler.bind(this)}
+          >
+            Playing
+          </button>
         </div>
         <div
           style={{
             position: "relative",
-            maxHeight: "550px",
+            maxHeight: "430px",
             overflowY: "scroll",
             overflowX: "hidden"
           }}
