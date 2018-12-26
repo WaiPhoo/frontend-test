@@ -18,9 +18,11 @@ class WatchList extends Component {
     console.log("in display watchlist");
     var movieBoxes = [];
     var watchlist = [];
-    var savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
+    var savedWatchlist = [];
+    savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
     if (savedWatchlist) {
       watchlist = savedWatchlist;
+      console.log("saved watchlist: " + savedWatchlist);
     }
     watchlist.forEach(movie => {
       const movieBox = (

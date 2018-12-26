@@ -48,7 +48,8 @@ class MovieBox extends Component {
       poster: this.props.movie.poster,
       vote_average: this.props.movie.vote_average
     };
-    var savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
+    var savedWatchlist = [];
+    savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
     if (savedWatchlist) {
       savedWatchlist.push(watchMovies);
       savedWatchlist = this.getUnique(savedWatchlist, "id");
