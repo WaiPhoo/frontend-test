@@ -24,7 +24,7 @@ class WatchList extends Component {
       watchlist = savedWatchlist;
       console.log("saved watchlist: " + savedWatchlist);
     }
-    watchlist.forEach(movie => {
+    Array.prototype.forEach.call(watchlist, movie => {
       const movieBox = (
         <WatchMovie
           displayWatchlist={this.displayWatchlist}
