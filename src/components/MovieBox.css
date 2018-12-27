@@ -227,10 +227,15 @@ hr {
 }
 
 .cast-div {
-  min-height: 180px;
+  min-height: 150px;
+  font-size: 12px;
   padding-bottom: 0;
   overflow-y: hidden;
   display: block;
+}
+.cast-profile {
+  width: 80px;
+  height: 80px;
 }
 .backdrops {
   float: left;

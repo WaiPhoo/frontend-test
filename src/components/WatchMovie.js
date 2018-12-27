@@ -315,8 +315,10 @@ class WatchMovie extends Component {
                 {this.state.cast.map(function(cast, index) {
                   return (
                     <div className="cast" key={index}>
-                      <img alt="profile" src={cast.profile_path} />
-                      <br />
+                      <div className="cast-profile">
+                        <img alt="profile" src={cast.profile_path} />
+                        <br />
+                      </div>
                       {cast.name}
                       <br />
                       <span className="green-text">{cast.character}</span>
