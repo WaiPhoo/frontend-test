@@ -64,7 +64,13 @@ class App extends Component {
         const results = searchResults.results;
         var movieBoxes = [];
         results.forEach(movie => {
-          movie.poster = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
+          if (movie.poster_path !== null) {
+            movie.poster =
+              "https://image.tmdb.org/t/p/w185" + movie.poster_path;
+          } else {
+            movie.poster =
+              "https://www.underconsideration.com/brandnew/archives/google_broken_image_00_b_logo_detail.gif";
+          }
           var date = movie.release_date.split("-");
           movie.release_date = date[0];
           const movieBox = <MovieBox key={movie.id} movie={movie} />;

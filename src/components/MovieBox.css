@@ -128,6 +128,10 @@
   float: left;
   text-align: left;
 }
+.modal-title {
+  width: 500px;
+  color: #50e3c2;
+}
 .modal-div2 p {
   padding-right: 25%;
 }
@@ -155,7 +159,12 @@
   padding-bottom: 15px;
   padding-top: 15px;
 }
-.modal-div1 img {
+.modal-img {
+  width: 310px;
+  height: 440px;
+  padding-left: 35px;
+}
+.modal-img img {
   width: 310px;
   height: 440px;
   padding-left: 10%;
@@ -219,9 +228,13 @@ hr {
   width: 120px;
   height: 230px;
   float: left;
-  margin: 5px;
+  margin-left: 15px;
 }
-.related-movie img {
+.related-img {
+  width: 120px;
+  height: 180px;
+}
+.related-img img {
   width: 120px;
   height: 180px;
 }
@@ -237,8 +250,14 @@ hr {
   width: 80px;
   height: 80px;
 }
+.cast-profile img {
+  min-width: 80px;
+  min-height: 80px;
+}
 .backdrops {
   float: left;
+  width: 250px;
+  height: 190px;
 }
 .backdrops img {
   width: 250px;
