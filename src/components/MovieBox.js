@@ -35,24 +35,30 @@ class MovieBox extends Component {
   };
 
   handleAdd(event) {
-    const id = event.target.id;
+    var id = this.props.movie.id;
+    console.log("id is " + id);
     this.addToWatchList(id);
   }
   // add the movie to watchlist
   addToWatchList(id) {
+    console.log("id is" + id);
     var watchMovies;
     watchMovies = {
       id: id,
       title: this.props.movie.title,
       release_date: this.props.movie.release_date,
       poster: this.props.movie.poster,
-      vote_average: this.props.movie.vote_average
+      vote_average: this.props.movie.vote_average,
+      overview: this.props.movie.overview
     };
     var savedWatchlist = [];
     savedWatchlist = Array.from(JSON.parse(localStorage.getItem("watchlist")));
     if (savedWatchlist) {
       savedWatchlist.push(watchMovies);
+      console.log("adding new " + watchMovies);
+      console.log("added savedwatchlist " + savedWatchlist);
       savedWatchlist = this.getUnique(savedWatchlist, "id");
+      console.log("after unique savedwatchlist " + savedWatchlist);
       localStorage.setItem("watchlist", JSON.stringify(savedWatchlist));
       this.setState({
         watchlist: savedWatchlist
@@ -222,8 +228,8 @@ class MovieBox extends Component {
       <div
         key={this.props.movie.id}
         style={{
-          width: 230,
-          height: 420,
+          width: "230px",
+          height: "420px",
           paddingTop: 25,
           color: "#00cca3",
           float: "left"
@@ -388,20 +394,20 @@ class MovieBox extends Component {
               />
             </TrailerModal>
           </Modal>
+          <div className="poster-container" id={this.props.movie.id}>
+            <div
+              className="poster"
+              id={this.props.movie.id}
+              onClick={this.showModal}
+            >
+              <div className="movie-poster">
+                <img alt="poster" src={this.props.movie.poster} />
+              </div>
 
-          <div className="poster">
-            <div className="movie-poster">
-              <img
-                id={this.props.movie.id}
-                onClick={this.showModal}
-                alt="poster"
-                src={this.props.movie.poster}
-              />
-            </div>
-
-            <div className="hoverText">
-              <strong>{this.props.movie.title}</strong>
-              <p>{this.props.movie.overview}</p>
+              <div className="hoverText">
+                <strong>{this.props.movie.title}</strong>
+                <p>{this.props.movie.overview}</p>
+              </div>
             </div>
           </div>
 

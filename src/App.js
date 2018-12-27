@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./FontStyle.css";
-import { FaSistrix } from "react-icons/fa";
+//import { FaSistrix } from "react-icons/fa";
 
 import MovieBox from "./components/MovieBox.js";
 
@@ -114,7 +114,7 @@ class App extends Component {
             color: "white"
           }}
           onChange={this.searchChangeHandler.bind(this)}
-          placeholder={<FaSistrix />}
+          //placeholders={<FaSistrix />}
           placeholder="Search..."
         />
         <div className="button-div">

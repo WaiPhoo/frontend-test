@@ -35,7 +35,7 @@ class WatchMovie extends Component {
   };
 
   handleRemove(event) {
-    const id = event.target.id;
+    var id = this.props.movie.id;
     this.removeMovie(id);
   }
   // remove the movie from watchlist
@@ -354,19 +354,20 @@ class WatchMovie extends Component {
             </TrailerModal>
           </Modal>
 
-          <div className="poster">
-            <div className="movie-poster">
-              <img
-                id={this.props.movie.id}
-                onClick={this.showModal}
-                alt="poster"
-                src={this.props.movie.poster}
-              />
-            </div>
+          <div className="poster-container" id={this.props.movie.id}>
+            <div
+              className="poster"
+              id={this.props.movie.id}
+              onClick={this.showModal}
+            >
+              <div className="movie-poster">
+                <img alt="poster" src={this.props.movie.poster} />
+              </div>
 
-            <div className="hoverText">
-              <strong>{this.props.movie.title}</strong>
-              <p>{this.props.movie.overview}</p>
+              <div className="hoverText">
+                <strong>{this.props.movie.title}</strong>
+                <p>{this.props.movie.overview}</p>
+              </div>
             </div>
           </div>
 
