@@ -31,6 +31,10 @@
   position: relative;
   height: 278px;
 }
+.movie-poster img {
+  width: 185px;
+  height: 278px;
+}
 .title {
   width: 180px;
   height: 70px;
