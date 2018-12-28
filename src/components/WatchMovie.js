@@ -45,7 +45,6 @@ class WatchMovie extends Component {
       return e.id !== id;
     });
     localStorage.setItem("watchlistWpk", JSON.stringify(savedWatchlist));
-
     this.props.displayWatchlist();
   }
   // get the detail info about the movie

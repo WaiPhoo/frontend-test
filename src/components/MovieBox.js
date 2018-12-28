@@ -66,7 +66,8 @@ class MovieBox extends Component {
       this.setState({
         watchlist: watchMovies
       });
-      localStorage.setItem("watchlistWpk", JSON.stringify(watchMovies));
+      savedWatchlist.push(watchMovies);
+      localStorage.setItem("watchlistWpk", JSON.stringify(savedWatchlist));
     }
   }
   // prevent watchlist from duplicating items

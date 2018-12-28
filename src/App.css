@@ -59,12 +59,12 @@
   padding-left: 25px;
 }
 .button-div button {
-  width: 120px;
+  width: 100px;
   height: 30px;
   color: #fff;
   font-style: bold;
   background: transparent;
-  border-color: aqua;
+  border-color: #50e3c2;
   border-radius: 7%;
   margin: 5px;
 }

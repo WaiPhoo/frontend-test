@@ -138,7 +138,7 @@ class App extends Component {
             id="top_rated"
             onClick={this.buttonHandler.bind(this)}
           >
-            Toprated
+            Top Rated
           </button>
           <button
             type="button"
@@ -154,7 +154,7 @@ class App extends Component {
             id="now_playing"
             onClick={this.buttonHandler.bind(this)}
           >
-            Playing
+            Now Playing
           </button>
         </div>
         <div
