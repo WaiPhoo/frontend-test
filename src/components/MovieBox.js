@@ -50,19 +50,23 @@ class MovieBox extends Component {
       overview: this.props.movie.overview
     };
     var savedWatchlist = [];
-    savedWatchlist = Array.from(JSON.parse(localStorage.getItem("watchlist")));
-    if (savedWatchlist) {
-      savedWatchlist.push(watchMovies);
-      savedWatchlist = this.getUnique(savedWatchlist, "id");
-      localStorage.setItem("watchlist", JSON.stringify(savedWatchlist));
-      this.setState({
-        watchlist: savedWatchlist
-      });
+    if (localStorage.getItem("watchlistWpk") !== null) {
+      savedWatchlist = Array.from(
+        JSON.parse(localStorage.getItem("watchlistWpk"))
+      );
+      if (savedWatchlist) {
+        savedWatchlist.push(watchMovies);
+        savedWatchlist = this.getUnique(savedWatchlist, "id");
+        localStorage.setItem("watchlistWpk", JSON.stringify(savedWatchlist));
+        this.setState({
+          watchlist: savedWatchlist
+        });
+      }
     } else {
       this.setState({
         watchlist: watchMovies
       });
-      localStorage.setItem("watchlist", JSON.stringify(watchMovies));
+      localStorage.setItem("watchlistWpk", JSON.stringify(watchMovies));
     }
   }
   // prevent watchlist from duplicating items

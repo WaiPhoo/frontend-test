@@ -40,11 +40,11 @@ class WatchMovie extends Component {
   }
   // remove the movie from watchlist
   removeMovie(id) {
-    var savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
+    var savedWatchlist = JSON.parse(localStorage.getItem("watchlistWpk"));
     savedWatchlist = savedWatchlist.filter(function(e) {
       return e.id !== id;
     });
-    localStorage.setItem("watchlist", JSON.stringify(savedWatchlist));
+    localStorage.setItem("watchlistWpk", JSON.stringify(savedWatchlist));
 
     this.props.displayWatchlist();
   }

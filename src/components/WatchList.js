@@ -18,7 +18,7 @@ class WatchList extends Component {
     var movieBoxes = [];
     var watchlist = [];
     var savedWatchlist = [];
-    savedWatchlist = JSON.parse(localStorage.getItem("watchlist"));
+    savedWatchlist = JSON.parse(localStorage.getItem("watchlistWpk"));
     if (savedWatchlist) {
       watchlist = savedWatchlist;
     }
