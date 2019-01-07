@@ -34,16 +34,19 @@
 .movie-poster img {
   width: 185px;
   height: 278px;
+  padding-top: 10px;
 }
 .title {
   width: 180px;
-  height: 70px;
+  height: 65px;
+  font-size: 15px;
   text-align: left;
   color: #50e3c2;
   overflow: hidden;
+  margin-top: -9px;
 }
 .title span {
-  font-size: 12px;
+  font-size: 10px;
 }
 .vote {
   border-radius: 5%;
@@ -51,8 +54,8 @@
   color: #50e3c2;
   font-size: 24px;
   text-align: left;
-  height: 35px;
-  padding-top: 7px;
+  height: 33px;
+  padding-top: 6px;
   padding-left: 10px;
   padding-right: 10px;
   width: 160px;
@@ -61,7 +64,7 @@
   border-radius: 5%;
   background: #50e3c2;
   color: #2b3247;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   height: 35px;
   margin-top: 10px;
@@ -94,7 +97,7 @@
   position: relative;
   background-color: #313541;
   width: 80%;
-  margin-left: 20%;
+  margin-left: 14%;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -135,13 +138,16 @@
 .modal-title {
   width: 500px;
   color: #50e3c2;
+  font-size: 40px;
 }
 .modal-div2 p {
-  padding-right: 25%;
+  padding-right: 15%;
 }
 .detail-top {
   min-width: 600px;
-  min-height: 100px;
+  min-height: 120px;
+  font-size: 14px;
+  line-height: 26px;
 }
 .crew-div {
   width: 600px;
@@ -174,14 +180,18 @@
   padding-left: 10%;
 }
 .crew {
-  width: 250px;
+  width: 280px;
   text-align: left;
   float: left;
+  font-size: 14px;
+  line-height: 25px;
 }
 .cast {
   width: 80px;
   float: left;
   padding-right: 15px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .cast img {
   width: 80px;
@@ -198,18 +208,22 @@
 .overview {
   text-align: justify;
   color: #8c93aa;
+  font-size: 15px;
 }
 .trailer-btn {
   width: 70px;
-  height: 70px;
+  height: 85px;
   padding-left: 0;
   text-align: center;
   background: transparent;
 }
-
+.bookmark-div {
+  font-size: 12px;
+  text-align: left;
+}
 .info-div {
   float: left;
-  width: 50%;
+  width: 60%;
   margin: 20px;
   margin-top: 0;
 }
@@ -233,6 +247,8 @@ hr {
   height: 230px;
   float: left;
   margin-left: 15px;
+  font-size: 12px;
+  text-align: left;
 }
 .related-img {
   width: 120px;
@@ -258,12 +274,17 @@ hr {
   min-width: 80px;
   min-height: 80px;
 }
+.backdrops-div{
+  float: left;
+  width: 295px;
+  height: 170px;
+}
 .backdrops {
   float: left;
-  width: 250px;
-  height: 190px;
+  width: 285px;
+  height: 160px;
 }
 .backdrops img {
-  width: 250px;
-  height: 190px;
+  width: 285px;
+  height: 160px;
 }

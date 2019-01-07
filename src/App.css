@@ -1,11 +1,12 @@
 /* header */
 .title-box {
   color: #fff;
-  font-size: 26px;
+  font-size: 25px;
   padding-left: 25px;
   padding-top: 30px;
   width: 125px;
   text-align: left;
+  margin-bottom: -20px;
 }
 
 .search-box {
@@ -54,12 +55,12 @@
 }
 /* filter buttons */
 .button-div {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
   padding-left: 25px;
 }
 .button-div button {
-  width: 100px;
+  width: 120px;
   height: 30px;
   color: #fff;
   font-style: bold;
@@ -67,6 +68,7 @@
   border-color: #50e3c2;
   border-radius: 7%;
   margin: 5px;
+  font-size: 14px;
 }
 
 @keyframes App-logo-spin {

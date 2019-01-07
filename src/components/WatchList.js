@@ -82,7 +82,7 @@ class WatchList extends Component {
         <input
           className="search-box"
           style={{
-            fontSize: 20,
+            fontSize: 18,
             display: "block",
             width: "95%",
             marginTop: 30,
