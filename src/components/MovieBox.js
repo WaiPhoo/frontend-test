@@ -31,6 +31,12 @@ class MovieBox extends Component {
         genres: [{ id: 18, name: "" }],
         percent_class: ""
       }
+    ],
+    genres: [
+      {
+        genres: [{ id: 18, name: "" }],
+        percent_class: ""
+      }
     ]
   };
   componentDidMount() {
@@ -106,7 +112,7 @@ class MovieBox extends Component {
         detail.percent_class = "";
         var details = [];
         details.push(detail);
-        this.setState({ detail: details });
+        this.setState({ genres: details });
       },
       error: (xhr, status, err) => {
         console.error("Failed to fetch data");
@@ -474,8 +480,7 @@ class MovieBox extends Component {
               >
                 Genres:
                 <span className="green-text">
-                  {this.state.genres}
-                  {this.state.detail[0].genres.map(g => g.name).join(", ")}
+                  {this.state.genres[0].genres.map(g => g.name).join(", ")}
                 </span>{" "}
                 Year:
               </span>

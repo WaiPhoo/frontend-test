@@ -96,8 +96,8 @@
 .modal .modal-main {
   position: relative;
   background-color: #313541;
-  width: 80%;
-  margin-left: 14%;
+  width: 84%;
+  margin-left: 8%;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -127,21 +127,21 @@
   display: none;
 }
 .modal-div1 {
-  width: 40%;
+  width: 43%;
   float: left;
 }
 .modal-div2 {
-  width: 60%;
+  width: 57%;
   float: left;
   text-align: left;
 }
 .modal-title {
-  width: 500px;
+  width: 600px;
   color: #50e3c2;
   font-size: 40px;
 }
 .modal-div2 p {
-  padding-right: 15%;
+  padding-right: 8%;
 }
 .detail-top {
   min-width: 600px;
@@ -170,14 +170,14 @@
   padding-top: 15px;
 }
 .modal-img {
-  width: 310px;
-  height: 440px;
-  padding-left: 35px;
+  width: 400px;
+  height: 600px;
+  padding-left: 20px;
 }
 .modal-img img {
-  width: 310px;
-  height: 440px;
-  padding-left: 10%;
+  width: 400px;
+  height: 600px;
+  padding-left: 0;
 }
 .crew {
   width: 280px;
@@ -187,15 +187,15 @@
   line-height: 25px;
 }
 .cast {
-  width: 80px;
+  width: 100px;
   float: left;
-  padding-right: 15px;
+  padding-right: 10px;
   font-size: 14px;
   line-height: 20px;
 }
 .cast img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 125px;
 }
 .popup {
   display: none;
@@ -220,6 +220,8 @@
 .bookmark-div {
   font-size: 12px;
   text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .info-div {
   float: left;
@@ -238,53 +240,54 @@
 }
 hr {
   border: 1px solid #50e3c2;
+  margin-right: 45px;
 }
 .related-div {
   padding-top: 40px;
 }
 .related-movie {
-  width: 120px;
-  height: 230px;
+  width: 130px;
+  height: 250px;
   float: left;
-  margin-left: 15px;
+  margin-left: 10px;
   font-size: 12px;
   text-align: left;
 }
 .related-img {
-  width: 120px;
-  height: 180px;
+  width: 130px;
+  height: 202px;
 }
 .related-img img {
-  width: 120px;
-  height: 180px;
+  width: 130px;
+  height: 202px;
 }
 
 .cast-div {
-  min-height: 150px;
+  min-height: 155px;
   font-size: 12px;
   padding-bottom: 0;
   overflow-y: hidden;
   display: block;
 }
 .cast-profile {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 125px;
 }
 .cast-profile img {
-  min-width: 80px;
-  min-height: 80px;
+  min-width: 100px;
+  min-height: 125px;
 }
-.backdrops-div{
+.backdrops-div {
   float: left;
-  width: 295px;
+  width: 290px;
   height: 170px;
 }
 .backdrops {
   float: left;
-  width: 285px;
+  width: 282px;
   height: 160px;
 }
 .backdrops img {
-  width: 285px;
+  width: 282px;
   height: 160px;
 }
