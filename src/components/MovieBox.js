@@ -311,21 +311,23 @@ class MovieBox extends Component {
               </div>
 
               <div className="related-div">
-                <div className="modal-header" style={{ paddingLeft: 20 }}>
+                <div className="modal-header" style={{ paddingLeft: 30 }}>
                   <strong>{this.state.relatedMovieTitle}</strong>
                   <br />
                 </div>
-                {this.state.relatedMovies.map(function(movie, index) {
-                  return (
-                    <div className="related-movie" key={index}>
-                      <div className="related-img">
-                        <img alt="poster" src={movie.poster_path} />
+                <div style={{ paddingLeft: 10 }}>
+                  {this.state.relatedMovies.map(function(movie, index) {
+                    return (
+                      <div className="related-movie" key={index}>
+                        <div className="related-img">
+                          <img alt="poster" src={movie.poster_path} />
+                        </div>
+                        <br />
+                        {movie.title}
                       </div>
-                      <br />
-                      {movie.title}
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
             <div className="modal-div2">

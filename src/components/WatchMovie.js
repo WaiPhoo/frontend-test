@@ -269,7 +269,7 @@ class WatchMovie extends Component {
               </div>
 
               <div className="related-div">
-                <div className="modal-header" style={{ paddingLeft: 20 }}>
+                <div className="modal-header" style={{ paddingLeft: 30 }}>
                   <strong>{this.state.relatedMovieTitle}</strong>
                   <br />
                 </div>
