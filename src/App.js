@@ -160,7 +160,7 @@ class App extends Component {
         <div
           style={{
             position: "relative",
-            maxHeight: "480px",
+            maxHeight: "580px",
             overflowY: "scroll",
             overflowX: "hidden"
           }}
